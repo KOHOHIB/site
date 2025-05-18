@@ -1,0 +1,14 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Форум</title>
+    {% endif %}
+  </head>
+  <body>
+    <h1 align="center">Форум</h1>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>

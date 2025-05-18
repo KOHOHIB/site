@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <h1>Тема: {{ name }}</h1>
+        <h2>Текст: {{ text }}</h2>
+        <p>
+            {{ form.comment.label }}<br>
+            {{ form.comment(class="form-control") }}<br>
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        {% for item in comments%}
+            <h2>Автор: {{ item.owner_name }}</h2>
+            <h3>{{ item.text }}</h3>
+            <a class="button" href="/delete_comment/{{ item.id }}" target="_blank">Удалить комментарий</a>
+            <br>
+        {% endfor %}
+        <form action="http://127.0.0.1:5000/" target="_blank">
+            <button>На главную</button>
+        </form>
+    </form>
+{% endblock %}

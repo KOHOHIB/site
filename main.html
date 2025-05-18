@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+    <body>
+        <h4>Имя пользователя: {{ name }}</h4>
+        <form action="http://127.0.0.1:5000/login" target="_blank">
+            <button>Вход в аккаунт</button>
+        </form>
+        <form action="http://127.0.0.1:5000/register" target="_blank">
+            <button>Регистрация</button>
+        </form>
+        <form action="http://127.0.0.1:5000/addtheme" target="_blank">
+            <button>Добавить тему</button>
+        </form>
+        <h1 align="center">Список тем</h1>
+    {% for item in all %}
+            {% for item2 in item %}
+            <h2>
+                <a class="button" href="http://127.0.0.1:5000/theme/{{ item2 }}"  target="_blank">{{ item2 }}</a>
+            </h2>
+            {% endfor %}
+    {% endfor %}
+    </table>
+    </body>
+</html>
+{% endblock %}
