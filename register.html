@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.surname.label }}<br>
+            {{ form.surname(class="form-control") }}<br>
+        </p>
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-control") }}<br>
+        </p>
+        <p>
+            {{ form.age.label }}<br>
+            {{ form.age(class="form-control") }}<br>
+        </p>
+        <p>
+            {{ form.position.label }}<br>
+            {{ form.position(class="form-control") }}<br>
+        </p>
+        <p>
+            {{ form.spetiality.label }}<br>
+            {{ form.spetiality(class="form-control") }}<br>
+        </p>
+        <p>
+            {{ form.address.label }}<br>
+            {{ form.address(class="form-control") }}<br>
+        </p>
+        <p>
+            {{ form.address.label }}<br>
+            {{ form.address(class="form-control") }}<br>
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(class="form-control", type="email") }}<br>
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(class="form-control") }}<br>
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        <div>{{ message }}</div>
+        <a class="button" href="http://127.0.0.1:5000/" target="_blank">На главную</a>
+        <a class="button" href="http://127.0.0.1:5000/register" target="_blank">Войти</a>
+        <a class="button" href="http://127.0.0.1:5000/job" target="_blank">Добавить работу</a>
+    </form>
+{% endblock %}
